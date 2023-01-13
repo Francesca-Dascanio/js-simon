@@ -38,6 +38,7 @@ function getArrayRandom () {
 }
 
 
+
 // Stampo in pagina i 5 numeri random
 let myDiv = document.getElementById('numbers-random');
 myDiv.innerHTML = getArrayRandom();
@@ -60,7 +61,11 @@ setTimeout (function () {
     // Vengono raccolti in un array i 5 numeri scritti dall'utente
     const user = getArrayUser ();
 
+    const result = getArrayResult ();
+
 }, 5000);
+
+
 
 
 // Cosa metto dentro alla funzione anonima (cioè cosa esegue dopo 30 secondi)
@@ -94,6 +99,41 @@ function getArrayUser () {
     return arrayUser;
 
 }
+
+
+
+// c. In pagina compaiono 2 informazioni (quindi creo un paragrafo in HTML che dice x cose) (posso metterlo in setTimeout 35 sec?)
+// Devo creare un modo per confrontare arrayRandom e arrayUser in modo da trovare le due informazioni
+
+// Funzione mi dovrebbe restituire l'array dei numeri dell'utente che combaciano con quelli dell'arrayRandom
+
+function getArrayResult () {
+
+    // In una variabile richiamo la funzione che restituisce array Random
+    const arrayRandom = getArrayRandom ();
+
+    // In una variabile richiamo la funzione che restituisce array User
+    const arrayUser = getArrayUser ();
+
+    // Creo un array dove pushare i numeri risultanti
+    const arrayResult = [];
+
+
+    for (let i = 0; i < arrayUser.lenght; i++) {
+
+            if (arrayRandom.includes(arrayUser[i])) {
+                arrayResult.push(arrayUser[i]);
+
+                console.log(arrayResult);
+
+                return arrayResult;
+            }
+        }
+
+}
+
+    
+
 
 
 
