@@ -13,8 +13,10 @@ il software dice:
 1. Creo un numero casuale (funzione per creare numero casuale + variabile numero casuale)
 2. Creo un array di 5 numeri casuali (ciclo for da 1 a 5 dove devo stampare numeri casuali; all'esterno creo un array vuoto da riempire con numeri casuali? - mi serve un array perchè devo poterli richiamare per verifica finale)
 3. stampo array di 5 numeri casuali in pagina (creo un div all'interno del quale stampo i 5 numeri)
+
 4. Dal momento in cui ho stampato i 5 numeri casuali parte un tempo definito di 30 secondi (creo un setTimeout con dentro che cosa deve succedere dopo un dato tempo [30 secondi * 1000 millisecondi])
-5. Creo funzione che deve succedere dopo (la creo qui oppure faccio una funzione anonima in cui inserisco il richiamo alla funzione che voglio richiamare con i rispettivi argomenti?)
+
+5. Creo una funzione anonima in cui inserisco il richiamo alla funzione che voglio richiamare con i rispettivi argomenti
 
 6. COSA SUCCEDE DOPO I 30 SECONDI (tutto questo deve essere dentro al setTimeout?)
     a.  i 5 numeri scompaiono (posso usare una classe .black e .white, che tolgo e metto; oppure se ho usato un array posso svuotare array?)
