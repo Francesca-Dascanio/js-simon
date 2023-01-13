@@ -3,3 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.stile-div {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.visible {
+    color: black;
+}
+
+.not-visible {
+    color: white;
+}
