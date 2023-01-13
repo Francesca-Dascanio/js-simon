@@ -40,8 +40,11 @@ function getArrayRandom () {
 
 
 // Stampo in pagina i 5 numeri random
+
+const arrayRandom = getArrayRandom();
 let myDiv = document.getElementById('numbers-random');
-myDiv.innerHTML = getArrayRandom();
+myDiv.innerHTML = arrayRandom;
+
 
 
 
@@ -59,9 +62,8 @@ setTimeout (function () {
 
     // azioni che devono succedere dopo 35 secondi
     // Vengono raccolti in un array i 5 numeri scritti dall'utente
-    const user = getArrayUser ();
 
-    const result = getArrayResult ();
+    getResult ();
 
 }, 5000);
 
@@ -107,32 +109,47 @@ function getArrayUser () {
 
 // Funzione mi dovrebbe restituire l'array dei numeri dell'utente che combaciano con quelli dell'arrayRandom
 
-function getArrayResult () {
+function getResult () {
 
-    // In una variabile richiamo la funzione che restituisce array Random
-    const arrayRandom = getArrayRandom ();
 
     // In una variabile richiamo la funzione che restituisce array User
     const arrayUser = getArrayUser ();
 
     // Creo un array dove pushare i numeri risultanti
-    const arrayResult = [];
+    const arrayResult = confronto (arrayUser, arrayRandom);
+    // stampa dell'array con ciclo
+
+    document.getElementById('result-1').innerHTML = `Hai indovinato ${arrayResult.length} numeri giusti!`;
+
+    document.getElementById('result-2').innerHTML = 'I numeri corretti sono: ';
+
+    for (let i = 0; i < arrayResult.length; i++) {
+
+        document.getElementById('result-2').innerHTML += ` ${arrayResult[i]}         `;
+    }   
+      
+}
+
+    function confronto(arr1,arr2) {
+
+        const arrayResult = [];
+
+        console.log('arr2', arr2);
+
+        for (let i = 0; i < arr1.length; i++) {
+
+            console.log('Elemento: ', arr1[i]);
 
 
-    for (let i = 0; i < arrayUser.lenght; i++) {
-
-            if (arrayRandom.includes(arrayUser[i])) {
-                arrayResult.push(arrayUser[i]);
-
-                console.log(arrayResult);
-
-                return arrayResult;
+            if (arr2.includes(arr1[i])) {
+                arrayResult.push(arr1[i]);
+                console.log('dentro');              
+  
             }
         }
 
-}
-
-    
+        return arrayResult
+    }
 
 
 
